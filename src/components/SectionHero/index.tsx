@@ -1,18 +1,24 @@
 import React from 'react'
 
+import { gaEvent } from 'utils/ga'
+import { getImageUrl } from 'utils/getImageUrl'
+import { ImageProps, HeaderProps } from 'types/api'
+
 import Logo from 'components/Logo'
 import Button from 'components/Button'
-import * as S from './styles'
-
-import { gaEvent } from 'utils/ga'
 import Container from 'components/Container'
-import { LandingPageProps } from 'types/api'
-import { getImageUrl } from 'utils/getImageUrl'
+
+import * as S from './styles'
 
 const onClick = () =>
   gaEvent({ action: 'click', category: 'cta', label: 'hero button' })
 
-const SectionHero = ({ logo, header }: LandingPageProps) => (
+type SectionHeroProps = {
+  logo: ImageProps
+  header: HeaderProps
+}
+
+const SectionHero = ({ logo, header }: SectionHeroProps) => (
   <S.Wrapper>
     <Container>
       <Logo {...logo} />

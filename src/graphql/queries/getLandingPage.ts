@@ -1,4 +1,6 @@
-const GET_LANDING_PAGE = /*GraphQL*/ `
+import { gql } from 'graphql-request'
+
+const GET_LANDING_PAGE = gql`
   fragment imageData on UploadFile {
     alternativeText
     url
@@ -24,11 +26,23 @@ const GET_LANDING_PAGE = /*GraphQL*/ `
     }
   }
 
+  fragment sectionAboutProject on LandingPage {
+    sectionAboutProject {
+      title
+      description
+      image {
+        ...imageData
+      }
+    }
+  }
+
   query GET_LANDING_PAGE {
     landingPage {
       ...logo
       ...header
+      ...sectionAboutProject
     }
-  }`
+  }
+`
 
 export default GET_LANDING_PAGE
