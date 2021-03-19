@@ -69,6 +69,13 @@ const GET_LANDING_PAGE = gql`
     }
   }
 
+  fragment sectionAgenda on LandingPage {
+    sectionAgenda {
+      title
+      description
+    }
+  }
+
   query GET_LANDING_PAGE {
     landingPage {
       ...logo
@@ -77,6 +84,7 @@ const GET_LANDING_PAGE = gql`
       ...sectionTech
       ...sectionConcepts
       ...sectionModules
+      ...sectionAgenda
     }
   }
 `
