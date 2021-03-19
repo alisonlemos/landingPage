@@ -5,6 +5,12 @@ export type TechIcon = {
   }
 }
 
+export type Module = {
+  title: string
+  subtitle: string
+  description: string
+}
+
 export type ImageProps = {
   alternativeText: string
   url: string
@@ -38,10 +44,16 @@ export type SectionConceptsProps = {
   }[]
 }
 
+export type SectionModulesProps = {
+  title: string
+  modules: Module[]
+}
+
 export type LandingPageProps = {
   logo: ImageProps
   header: HeaderProps
   sectionAboutProject: SectionAboutProjectProps
   sectionTech: SectionTechProps
   sectionConcepts: SectionConceptsProps
+  sectionModules: SectionModulesProps
 }
