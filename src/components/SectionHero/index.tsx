@@ -2,7 +2,7 @@ import React from 'react'
 
 import { gaEvent } from 'utils/ga'
 import { getImageUrl } from 'utils/getImageUrl'
-import { ImageProps, HeaderProps } from 'types/api'
+import { Image, HeaderProps } from 'types/api'
 
 import Logo from 'components/Logo'
 import Button from 'components/Button'
@@ -14,7 +14,7 @@ const onClick = () =>
   gaEvent({ action: 'click', category: 'cta', label: 'hero button' })
 
 type SectionHeroProps = {
-  logo: ImageProps
+  logo: Image
   header: HeaderProps
 }
 
